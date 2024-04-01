@@ -5,20 +5,6 @@ metadata:
   name: eks-spot-cluster
   region: us-east-1
 
-vpc:
-  id: "vpc-0d4aff0af201d425b"  # (optional, must match VPC ID used for each subnet below)
-  cidr: "192.168.0.0/16"       # (optional, must match CIDR used by the given VPC)
-  subnets:
-    # must provide 'private' and/or 'public' subnets by availability zone as shown
-    private:
-      us-east-1a:
-        id: "subnet-073be5d2a99ff98d3"
-        cidr: "192.168.128.0/19" # (optional, must match CIDR used by the given subnet)
-
-      us-east-1b:
-        id: "subnet-08fca2e852829650d"
-        cidr: "92.168.64.0/19"  # (optional, must match CIDR used by the given subnet)
-
 managedNodeGroups:
   - name: spot
     instanceType: m5.large

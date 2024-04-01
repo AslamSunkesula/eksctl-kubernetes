@@ -3,7 +3,17 @@ kind: ClusterConfig
 
 metadata:
   name: eks-spot-cluster
-  region: us-east-1c
+  region: us-east-1a
+
+
+  vpc:
+  cidr: 172.31.0.0/16
+  autoAllocateIPv6: true
+  hostnameType: eks
+  # disable public access to endpoint and only allow private access
+  clusterEndpoints:
+    publicAccess: false
+    privateAccess: true
 
 managedNodeGroups: # this is also completely managed by AWS
   - name: spot
@@ -11,7 +21,7 @@ managedNodeGroups: # this is also completely managed by AWS
     # your K8 node can be anytime taken back by AWS
     spot: true
     availabilityZones: # ebs static provisioning
-    - us-east-1d
+    - us-east-1b
     desiredCapacity: 3
     ssh:
       publicKeyName: kubernetes # replace this with your keypair exists in AWS.

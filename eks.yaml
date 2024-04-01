@@ -7,7 +7,7 @@ metadata:
 
 vpc:
   cidr: 172.31.0.0/16
-  hostnameType: resource-name
+  hostnameType: vpc-081b840b19ca8ac91
   clusterEndpoints:
     publicAccess: false
     privateAccess: true
